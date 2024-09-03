@@ -1,0 +1,288 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root{
+    --fuentePrincipal: "Roboto Condensed", sans-serif;
+    --fuenteSecundaria: "Bebas Neue", sans-serif;
+    --fuenteTerciaria:  "Gruppo", sans-serif;
+
+    --colorNav: #fff;;
+
+}
+
+html, body{
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+
+    color: black;
+    box-sizing: border-box;
+
+    overflow-y: scroll; /* Habilita el scroll vertical */
+    scrollbar-width: none;/* Oculta la barra de scroll en Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+img {
+    max-width: 100%; /*para que la imagen se vea completa siempre*/
+    display: block; /*Elimina espacio*/
+}
+
+
+.logo{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1em;
+    z-index: 2;
+}
+
+.logo a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 4px;
+    font-family: var(--fuentePrincipal);
+    line-height: 1.5;
+}
+
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+
+.nav a {
+    text-decoration: none;
+    color: var(--colorNav);
+    font-family: var(--fuenteSecundaria);
+    font-size: 14px;
+    padding: 2em 3em;
+}
+
+.nav a#main-event {
+    margin-left: 2em;
+    margin-right: 5em;
+    color: black;
+}
+.nav .nav-items.primary a {
+    color: rgb(110, 110, 110);
+}
+
+.nav-items.secundary a{
+    color: rgb(110, 110, 110);
+}
+
+span {
+    padding: 0 1em;
+}
+
+
+.row:nth-child(2){
+    justify-content: center;
+}
+
+@media ( max-width: 900px ) {
+    .nav {
+        display: none !important;
+    }
+
+}
+
+
+@media ( max-width: 1250px ) {
+    .nav a{
+        padding: 2em 1em;
+    }
+    .nav a#main-event {
+        margin-left: 2em;
+        margin-right: 3em;
+    }
+
+}
+
+/* hamburger  */
+
+.hamburger{
+    display: none;
+}
+.hamburger  a{
+    text-decoration: none;
+    color: #fff;
+}
+
+@media ( max-width: 900px ) {
+    .hamburger{
+        font-size: 18px; 
+        position: fixed;
+        left: 90%;
+        padding: 1em;
+        z-index: 3;
+        display: block
+    }
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3; /* Asegura que se sobreponga */
+    top: 0;
+    left: 0;
+    background-color: #5e0c0a;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+/* Fondo oscuro para el contenido principal cuando el menú esté abierto */
+.content-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1; /* Detrás del menú lateral pero sobre el contenido */
+}
+
+.sidebar a {
+    font-family: var(--fuenteSecundaria);
+    padding: 25px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.links-laterales{
+    margin-top: 80px;
+}
+
+.sidebar a:hover {
+    color: black;
+}
+
+/* principal  */
+
+.principal-contenedor{
+    max-width: 90%;
+
+}
+
+.contenedor{
+    margin: 0 auto;
+    margin-left: 180px;
+    margin-top: 160px;
+    display: flex;
+}
+
+.logo-productions{
+    width: 400px;
+
+}
+
+.logo-productions img{
+    border-radius: 500px;
+    margin-top: 60px;
+    margin-left: 180px;
+}
+
+.information{
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+}
+
+.productions{
+    font-weight:400;
+}
+
+.information h1{
+    font-size: 70px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.saludo{
+    letter-spacing: 10px;
+    font-size: 13px;
+}
+
+.correo{
+    margin: 30px 0;
+    font-size: 15px;
+}
+
+.sedes{
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 900;
+}
+
+.sede{
+    font-size: 12px;
+    font-weight: 100;
+    margin: 0;
+    letter-spacing: 4px;
+}
+
+.items-footer{
+    margin-top: 20px;
+}
+
+.items-footer a{
+    text-decoration: none;
+    color: black;
+
+    font-size: 20px;
+    margin-right: 30px;
+}
+
+@media ( max-width: 1300px ) {
+    .logo-productions img{
+        margin-left: 90px;
+    }
+}
+
+@media ( max-width: 1000px ) {
+    .logo-productions img{
+        margin-left: 10px;
+    }
+}
+
+@media ( max-width: 900px ) {
+    .contenedor{
+        margin-left: 90px;
+        margin-top: 160px;
+    }
+
+    .logo-productions {
+        height: 800px;
+    }
+
+}
+
+@media ( max-width: 760px) {
+    .logo-productions{
+        display: none;
+    }
+    
+}
+
+@media ( max-width: 450px) {
+    .contenedor{
+        margin-left: 50px;
+    }
+    
+}

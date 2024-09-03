@@ -1,0 +1,437 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root{
+    --fuentePrincipal: "Roboto Condensed", sans-serif;
+    --fuenteSecundaria: "Bebas Neue", sans-serif;
+
+    --colorNav: #fff;;
+
+}
+
+html, body{
+    width: 100%;
+    /* height: 100%; */
+    min-height: 140vh;
+    /* background: #000 !important; */
+    background: linear-gradient(black 0%, black 105vh, white 100vh, white 140vh);
+
+    color: #fff;
+    box-sizing: border-box;
+
+    overflow-y: scroll; /* Habilita el scroll vertical */
+    scrollbar-width: none;/* Oculta la barra de scroll en Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.logo{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1em;
+    z-index: 4;
+}
+
+.logo a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--colorNav);
+    letter-spacing: 4px;
+    font-family: var(--fuentePrincipal);
+    line-height: 1.5;
+}
+
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+
+.nav a {
+    text-decoration: none;
+    color: var(--colorNav);
+    font-family: var(--fuenteSecundaria);
+    font-size: 14px;
+    padding: 2em 3em;
+}
+
+.nav a#main-event {
+    margin-left: 2em;
+    margin-right: 5em;
+    color: var(--colorNav);
+}
+.nav .nav-items.primary a {
+    color: rgb(110, 110, 110);
+}
+
+.nav-items.secundary a{
+    color: rgb(110, 110, 110);
+}
+
+.artist-name{
+    font-family: var(--fuenteSecundaria);
+}
+.principal-contenedor {
+    position: relative;
+
+}
+
+/* !Cambios aqui */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 105vh; /* 105vh para el carrusel + 35vh para el footer */
+}
+
+.carousel {
+    position: absolute !important;  
+    width: calc(98vw - 2em);
+    height: calc(98vh - 2em);
+    margin: 0 auto;
+    left: 2em !important;
+
+}
+
+.carousel-inner {
+    height: 100%;
+
+} 
+
+#myCarousel {
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: relative !important;
+    height: 100% !important;
+}
+
+.carousel-caption{
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    padding: 2.5em;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 1s;
+    opacity: 1;
+}
+
+.carousel-caption::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1%, transparent 100%);
+    border-image-slice: 1;
+    background: rgba(12, 12, 12, 0.575);
+    filter: blur(50%);
+    border-radius: 100%;
+    z-index: 0;
+    transition: all 0.3s;
+
+}
+
+.carousel-caption-animate-in {
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+video{
+    opacity: 0.5 !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.5;
+    margin: 0 !important;
+}
+
+
+/* ?items social networks */
+
+.row-items{
+    color: inherit;
+    text-decoration: none;
+    font-size: 30px;
+    opacity: 0.5;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.youtube-icon:hover{
+    color: #c4302b;
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.spotify-icon:hover{
+    color: #81b71a ;
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+
+span {
+    padding: 0 1em;
+}
+
+
+.row:nth-child(2){
+    justify-content: center;
+}
+
+.header{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1{
+    font-family: var(--fuentePrincipal);
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    font-size: 20px;
+}
+
+.header p{
+    font-size: 12px;
+}
+
+.carousel-control-prev ,
+.carousel-control-next {
+    position: absolute !important;
+    z-index: 2;
+}
+
+.carousel-control-prev {
+    left: -5em !important;
+}
+
+.carousel-control-next {
+    right:-5em !important;
+}
+
+@media ( max-width: 900px ) {
+    .nav {
+        display: none !important;
+    }
+
+    .carousel {
+        width: 100%;
+        height: 94vh;  
+        top: 4em;
+        left: 0 !important;
+    }
+
+    #myCarousel{
+        border-radius: 0;
+        overflow: hidden;
+    }
+
+    .carousel-control-prev {
+        left: 0 !important;
+    }
+
+    .carousel-control-next {
+        right: 0 !important;
+    }
+
+    .header h1{
+        text-align: center;
+        font-size: 15px;
+    }
+} 
+
+@media ( max-width: 1250px ) {
+    .nav a{
+        padding: 2em 1em;
+    }
+    .nav a#main-event {
+        margin-left: 2em;
+        margin-right: 3em;
+    }
+
+}
+
+/*Footer*/
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate {
+    animation: slideInFromRight 1.5s ease-out;
+}
+
+
+.footer{
+    color: rgb(75, 74, 74);
+    text-transform: uppercase;
+    font-family: var(--fuentePrincipal),
+} 
+
+
+.items-footer a{
+    text-decoration: none;
+    color: black;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+.principal-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 13px;
+    width: 70%;
+    margin: 0 160px;
+}
+
+.contacto-footer p{
+    margin: 5px;
+
+}
+
+.contacto-footer div + p {
+    font-weight: bold;
+    color: black;
+
+}
+
+
+@media ( max-width: 900px ) {
+    .principal-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 13px;
+        width: 90%;
+        margin: 40px auto;    
+    }
+
+    .contacto-footer p{
+        margin: 10px;
+    }
+
+    .politicas-footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 15px;
+    }
+}
+
+@media ( max-width: 460px ) {
+    .principal-footer{
+        display: unset;
+        text-align: center;
+    }
+
+    .principal-footer p{
+        margin: 5px;
+    }
+
+    .footer{
+        margin-top: 25px;
+    }
+}
+
+
+/* hamburger  */
+
+.hamburger{
+    display: none;
+}
+.hamburger  a{
+    text-decoration: none;
+    color: #fff;
+}
+
+@media ( max-width: 900px ) {
+    .hamburger{
+        font-size: 18px; 
+        position: fixed;
+        left: 90%;
+        padding: 1em;
+        z-index: 3;
+        display: block
+    }
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3; /* Asegura que se sobreponga */
+    top: 0;
+    left: 0;
+    background-color: #5e0c0a;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+/* Fondo oscuro para el contenido principal cuando el menú esté abierto */
+.content-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1; /* Detrás del menú lateral pero sobre el contenido */
+}
+
+.sidebar a {
+    font-family: var(--fuenteSecundaria);
+    padding: 25px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.links-laterales{
+    margin-top: 80px;
+}
+
+.sidebar a:hover {
+    color: black;
+}
+
